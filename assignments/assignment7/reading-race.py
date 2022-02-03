@@ -1,0 +1,58 @@
+# Author: Logan Simonis
+# Earning money for reading
+import turtle
+turtle.setup(800,800)
+turtle.bgcolor("skyblue")
+pen = turtle.Turtle()
+pen.speed(0)
+pen.width(5)
+style = ("Arial", 48, "normal")
+
+circleRadius = turtle.window_width()/2
+books = turtle.numinput("Reading log", "How many books have you read this month: ", 15, 0, 60)
+
+pen.up()
+pen.setpos(0, -circleRadius//2)
+pen.down()
+pen.width(28)
+if books >= 30:
+    pen.color("dark Goldenrod")
+    pen.fillcolor("wheat")
+    pen.begin_fill()
+    pen.circle(circleRadius//2)
+    pen.end_fill()
+    turtle.up()
+    turtle.setpos(-circleRadius//7, -circleRadius//14)
+    turtle.write("$10", font = style)
+    turtle.down()
+elif books >= 15:
+    pen.color("dark grey")
+    pen.fillcolor("white smoke")
+    pen.begin_fill()
+    pen.circle(circleRadius//2)
+    pen.end_fill()
+    turtle.up()
+    turtle.setpos(-circleRadius//8, -circleRadius//14)
+    turtle.write("$5", font = style)
+    turtle.down()
+elif books >= 5:
+    pen.color("saddle brown")
+    pen.fillcolor("tan")
+    pen.begin_fill()
+    pen.circle(circleRadius//2)
+    pen.end_fill()
+    turtle.up()
+    turtle.setpos(-circleRadius//8, -circleRadius//14)
+    turtle.write("$2", font = style)
+    turtle.down()
+elif books < 5:
+    pen.color("red")
+    pen.fillcolor("white")
+    pen.begin_fill()
+    pen.circle(circleRadius//2)
+    pen.end_fill()
+    turtle.up()
+    turtle.setpos(-circleRadius//8, -circleRadius//14)
+    turtle.write("$0", font = style)
+    turtle.down()
+turtle.done()
